@@ -8,6 +8,9 @@ class HomePageScreen extends StatefulWidget {
 }
 
 class HomePageScreenState extends State {
+  int tabsCount = 0;
+  int doubleTabsCount = 0;
+  int longPressCount=0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,6 +36,12 @@ class HomePageScreenState extends State {
             ),
           )
         ],
+      ),
+      bottomNavigationBar: Material(
+        child: Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: Text("Tab :$tabsCount, Double Tab :$doubleTabsCount, Long Press : $longPressCount"),
+        ),
       ),
     );
   }
