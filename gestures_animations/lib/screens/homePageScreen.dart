@@ -20,7 +20,20 @@ class HomePageScreenState extends State {
         ),
         backgroundColor: Colors.black87,
       ),
-      
+      // ekranın istediğiniz yerine bir eleman koymaya yarar
+      body: Stack(
+        children: <Widget>[
+          Positioned(
+            left: 40.0,
+            top: 60.0,
+            child: Container(
+              width: 100.0,
+              height: 100.0,
+              decoration: BoxDecoration(color: Colors.brown),
+            ),
+          )
+        ],
+      ),
     );
   }
 }
