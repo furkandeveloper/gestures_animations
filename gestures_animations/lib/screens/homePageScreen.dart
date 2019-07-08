@@ -11,6 +11,8 @@ class HomePageScreenState extends State {
   int tabsCount = 0;
   int doubleTabsCount = 0;
   int longPressCount = 0;
+  double xPosition = 40.0;
+  double yPosition = 60.0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,22 +33,33 @@ class HomePageScreenState extends State {
             tabsCount++;
           });
         },
-        onDoubleTap: (){
+        onDoubleTap: () {
           setState(() {
-           doubleTabsCount++; 
+            doubleTabsCount++;
           });
         },
-        onLongPress: (){
+        onLongPress: () {
           setState(() {
-           longPressCount++; 
+            longPressCount++;
+          });
+        },
+        // dikey ekranda sürükle
+        onVerticalDragUpdate: (DragUpdateDetails value) {
+          setState(() {
+            yPosition += value.delta.dy;
+          });
+        },
+        onHorizontalDragUpdate: (DragUpdateDetails value) {
+          setState(() {
+            xPosition += value.delta.dx;
           });
         },
         child: // ekranın istediğiniz yerine bir eleman koymaya yarar
             Stack(
           children: <Widget>[
             Positioned(
-              left: 40.0,
-              top: 60.0,
+              left: xPosition,
+              top: yPosition,
               child: Container(
                 width: 100.0,
                 height: 100.0,
