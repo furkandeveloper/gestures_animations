@@ -1,16 +1,13 @@
-# gestures_animations
+# Gestures And Animation
 
-A new Flutter project.
+Bu uygulama sayesinde kullanıcı haraketlerini(tek tıklama, çift tıklama, uzun basma)
+kontrol edebileceksiniz.
 
-## Getting Started
+* Ekran değerlerinin okunması
+* Gestures kavramı
+* AnimationController ve animation yapıları
+* setState ve StateFulWidget yapıları ile çalışmak
+* Scaffold ve material widgetlarının detaylı kullanımları
+ve daha bir çok konu hakkında bilgi sahibi olabilirsiniz.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
-
-For help getting started with Flutter, view our 
-[online documentation](https://flutter.dev/docs), which offers tutorials, 
-samples, guidance on mobile development, and a full API reference.
+Umarım Faydalı olur
