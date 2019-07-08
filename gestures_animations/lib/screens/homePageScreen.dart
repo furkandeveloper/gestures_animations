@@ -10,7 +10,7 @@ class HomePageScreen extends StatefulWidget {
 class HomePageScreenState extends State {
   int tabsCount = 0;
   int doubleTabsCount = 0;
-  int longPressCount=0;
+  int longPressCount = 0;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -23,24 +23,44 @@ class HomePageScreenState extends State {
         ),
         backgroundColor: Colors.black87,
       ),
-      // ekranın istediğiniz yerine bir eleman koymaya yarar
-      body: Stack(
-        children: <Widget>[
-          Positioned(
-            left: 40.0,
-            top: 60.0,
-            child: Container(
-              width: 100.0,
-              height: 100.0,
-              decoration: BoxDecoration(color: Colors.brown),
-            ),
-          )
-        ],
+      body: GestureDetector(
+        // tek tıklama eventi
+        // stateful wigdet olduğu için set state fonksiyonu çalışabilir
+        onTap: () {
+          setState(() {
+            tabsCount++;
+          });
+        },
+        onDoubleTap: (){
+          setState(() {
+           doubleTabsCount++; 
+          });
+        },
+        onLongPress: (){
+          setState(() {
+           longPressCount++; 
+          });
+        },
+        child: // ekranın istediğiniz yerine bir eleman koymaya yarar
+            Stack(
+          children: <Widget>[
+            Positioned(
+              left: 40.0,
+              top: 60.0,
+              child: Container(
+                width: 100.0,
+                height: 100.0,
+                decoration: BoxDecoration(color: Colors.brown),
+              ),
+            )
+          ],
+        ),
       ),
       bottomNavigationBar: Material(
         child: Padding(
           padding: const EdgeInsets.all(20.0),
-          child: Text("Tab :$tabsCount, Double Tab :$doubleTabsCount, Long Press : $longPressCount"),
+          child: Text(
+              "Tab :$tabsCount, Double Tab :$doubleTabsCount, Long Press : $longPressCount"),
         ),
       ),
     );
